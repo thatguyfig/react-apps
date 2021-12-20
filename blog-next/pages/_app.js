@@ -1,5 +1,7 @@
 import '../styles/index.css'
 
+import Head from 'next/head'
+import Header from '../components/header'
 import { Auth0Provider } from '@auth0/auth0-react'
 
 export default function MyApp({ Component, pageProps }) {
@@ -9,7 +11,10 @@ export default function MyApp({ Component, pageProps }) {
         clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID}
         domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN}
         >
-            <Component {...pageProps} />
+            <main>
+                <Component {...pageProps} />
+
+            </main>
         </Auth0Provider>
 
     ) 

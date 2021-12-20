@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Header from "../../components/header";
 import Container from "../../components/container";
 import distanceToNow from "../../lib/dateRelative";
 import { getAllPosts } from "../../lib/api";

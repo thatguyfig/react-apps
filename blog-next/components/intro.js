@@ -1,4 +1,5 @@
 import { CMS_NAME } from "../lib/constants";
+import Header from "./header";
 
 export default function Intro() {
     return (
@@ -16,6 +17,6 @@ export default function Intro() {
                 </a>{' '}
                 and {CMS_NAME}.
             </h4>
-        </section>
+            </section>
     )
 }

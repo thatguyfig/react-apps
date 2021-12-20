@@ -2,10 +2,17 @@ import Link from "next/link";
 
 export default function Header() {
     return (
-        <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8">
+        <header className="py-6">
+        <nav className="flex space-x-4">
             <Link href="/">
-                <a className="hover:underline">/</a>
-            </Link>
-        </h2>
+                    <a>Home</a>
+
+        </Link>
+        <Link href="/posts">
+            <a>Posts</a>
+        </Link>
+        </nav>
+
+        </header>
     )
 }

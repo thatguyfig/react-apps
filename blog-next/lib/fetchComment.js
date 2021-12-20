@@ -1,25 +1,26 @@
-import redis from "./redis";
+import redis from './redis'
 
 export default async function fetchComment(req, res) {
-    const { url } = req.query
-    
-    if (!url) {
-        return res.status(400).json({ message: 'Missing parameter.' })
-    }
+  const { url } = req.query
 
-    try {
-        // get data
-        const rawComments = await redis.lrange(url, 0, -1)
+  if (!url) {
+    return res.status(400).json({ message: 'Missing parameter.' })
+  }
 
-        // string date to object
-        const comments = rawComments.map((c) => {
-            const comment = JSON.parse(c)
-            delete comment.user.email
-            return comment
-        })
+  try {
+    // get data
+    const rawComments = await redis.lrange(url, 0, -1)
 
-        return res.status(200).json(comments)
-    } catch (_) {
-        return res.status(400).json({ message: 'Unexpected error occurred.'})
-    }
+    // string data to object
+    const comments = rawComments.map((c) => {
+      const comment = JSON.parse(c)
+      delete comment.user.email
+      return comment
+    })
+
+    return res.status(200).json(comments)
+  } catch (_) {
+    console.log("Some kind of error occurred")
+    return res.status(400).json({ message: 'Unexpected error occurred.' })
+  }
 }
