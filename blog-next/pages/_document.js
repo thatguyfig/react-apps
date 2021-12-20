@@ -1,4 +1,5 @@
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
+import Scripts from '../components/scripts'
 export default class MyDocument extends NextDocument {
 
     static getInitialProps(ctx) {
@@ -21,6 +22,7 @@ export default class MyDocument extends NextDocument {
                 </Head>
                 <body>
                     <Main />
+                    <Scripts />
                     <NextScript />
                 </body>
             </Html>

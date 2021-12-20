@@ -11,7 +11,6 @@ import PostTitle from "../../components/post-title";
 import Head from 'next/head'
 import { CMS_NAME } from "../../lib/constants";
 import markdownToHtml from '../../lib/markdownToHtml'
-import CodeBlock from "../../components/code-block";
 
 export default function Post({ post, morePosts, preview }) {
     const router = useRouter()
@@ -42,12 +41,6 @@ export default function Post({ post, morePosts, preview }) {
                                         author={post.author}
                                     />
                                     <PostBody content={post.content} />
-                                    <CodeBlock
-                                        code={"import requests"}
-                                        language={"python"}
-                                        showLineNumbers={false}
-                                        startingLineNumber={0}
-                                    />
                                 </article>
 
 

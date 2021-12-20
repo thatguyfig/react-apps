@@ -33,6 +33,7 @@ export default function Meta() {
             <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
             <meta name="theme-color" content="#000" />
             <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/skins/sunburst.css"></link>
             <meta
                 name="description"
                 content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
