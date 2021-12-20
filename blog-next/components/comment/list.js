@@ -1,6 +1,7 @@
 import distanceToNow from '../../lib/dateRelative'
 import { useAuth0 } from '@auth0/auth0-react'
 
+
 function CommentList({ comments, onDelete }) {
   const { user } = useAuth0()
 
@@ -10,7 +11,7 @@ function CommentList({ comments, onDelete }) {
         const isAuthor = user && user.sub === comment.user.sub
         const isAdmin =
           user && user.email === process.env.NEXT_PUBLIC_AUTH0_ADMIN_EMAIL
-
+        
         return (
           <div key={comment.created_at} className="flex space-x-4">
             <div className="flex-shrink-0">
