@@ -45,7 +45,7 @@ export default function Post({ post, morePosts, preview }) {
                                     <CodeBlock
                                         code={"import requests"}
                                         language={"python"}
-                                        showLineNumbers={true}
+                                        showLineNumbers={false}
                                         startingLineNumber={0}
                                     />
                                 </article>
